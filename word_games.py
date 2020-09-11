@@ -1,21 +1,33 @@
-print('enter a word')
+print('Enter a word!')
 word = input()
-valid_words = []
+valid_words = {}
 
 with open("names.txt", 'r') as f:
-    for line in f=
-        if len(line) == len(word):
-            valid_words.append(line)
+    for line in f:
+        if len(line.strip()) == len(word):
+            if sorted(line.strip()) in valid_words:
+                valid_words[line.strip()].append(line.strip())
+            else:
+                valid_words.append(sorted(line.strip()))
+            valid_words.append(line.strip())
 
-print (valid_words)
+sorted_words = []
+sorted_word = sorted(word)
 
-'''
-valid_words = []
+for i in valid_words:
+    sorted_words.append(sorted(i))
+
+#print (sorted_words)
+
+final_list = []
+#print (sorted_word)
+for i in sorted_words:
+    #print (i)
+    if i == sorted_word:
+        #print (i)
+        final_list.append(i)
+
+print (final_list)
 
 
-    lines_in_file = f.readlines()
-    for line_number in range(0,5):
-        print(lines_in_file[line_number])
-
-def input_function:
-'''
+#print(sorted_words)
